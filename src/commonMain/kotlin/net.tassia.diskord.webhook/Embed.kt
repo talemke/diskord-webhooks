@@ -4,25 +4,56 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Message (
+data class Embed (
 
-	@SerialName("content")
-	val content: String,
+	@SerialName("title")
+	val title: String?,
 
-	@SerialName("embeds")
-	val embeds: String,
+	@SerialName("description")
+	val description: String?,
 
-	@SerialName("files")
-	val files: String,
+	@SerialName("url")
+	val url: String?,
 
+	@SerialName("timestamp")
+	val timestamp: Long?,
 
-	@SerialName("username")
-	val username: String?,
+	@SerialName("color")
+	val color: Int?,
 
-	@SerialName("avatar_url")
-	val avatarUrl: String?,
+	@SerialName("footer")
+	val footer: String?, // TODO
 
-	@SerialName("tts")
-	val tts: Boolean,
+	@SerialName("image")
+	val image: String?, // TODO
+
+	@SerialName("thumbnail")
+	val thumbnail: String?, // TODO
+
+	@SerialName("video")
+	val video: String?, // TODO
+
+	@SerialName("provider")
+	val provider: String?, // TODO
+
+	@SerialName("author")
+	val author: String?, // TODO
+
+	@SerialName("fields")
+	val fields: List<EmbedField>,
+
+)
+
+@Serializable
+data class EmbedField (
+
+	@SerialName("name")
+	val name: String,
+
+	@SerialName("value")
+	val value: String,
+
+	@SerialName("inline")
+	val shouldInline: Boolean?
 
 )

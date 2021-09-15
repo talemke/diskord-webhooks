@@ -1,3 +1,6 @@
 package net.tassia.diskord.webhook.dsl
 
-annotation class MessageBuilderDSL()
+@DslMarker
+@Retention(AnnotationRetention.SOURCE)
+@Target(AnnotationTarget.FUNCTION)
+annotation class MessageBuilderDSL
