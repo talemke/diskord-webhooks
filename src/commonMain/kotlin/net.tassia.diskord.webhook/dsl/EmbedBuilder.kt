@@ -1,8 +1,7 @@
 @file:Suppress("MemberVisibilityCanBePrivate")
 package net.tassia.diskord.webhook.dsl
 
-import net.tassia.diskord.webhook.Embed
-import net.tassia.diskord.webhook.EmbedField
+import net.tassia.diskord.webhook.*
 import kotlin.js.JsName
 
 class EmbedBuilder {
@@ -43,6 +42,38 @@ class EmbedBuilder {
 
 
 
+	var footer: EmbedFooter? = null
+
+	fun footer(text: String, icon: String? = null) {
+		this.footer = EmbedFooter(text, icon)
+	}
+
+
+
+	var image: EmbedImage? = null
+
+	fun image(url: String) {
+		this.image = EmbedImage(url)
+	}
+
+
+
+	var thumbnail: EmbedThumbnail? = null
+
+	fun thumbnail(url: String) {
+		this.thumbnail = EmbedThumbnail(url)
+	}
+
+
+
+	var author: EmbedAuthor? = null
+
+	fun author(name: String, url: String? = null, icon: String? = null) {
+		this.author = EmbedAuthor(name, url, icon)
+	}
+
+
+
 	fun build(): Embed {
 		return Embed(
 			title = title,
@@ -50,12 +81,10 @@ class EmbedBuilder {
 			url = url,
 			timestamp = timestamp,
 			color = color,
-			footer = null, // TODO
-			image = null, // TODO
-			thumbnail = null, // TODO
-			video = null, // TODO
-			provider = null, // TODO
-			author = null, // TODO
+			footer = footer,
+			image = image,
+			thumbnail = thumbnail,
+			author = author,
 			fields = fields,
 		)
 	}

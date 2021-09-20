@@ -22,38 +22,18 @@ data class Embed (
 	val color: Int?,
 
 	@SerialName("footer")
-	val footer: String?, // TODO
+	val footer: EmbedFooter?,
 
 	@SerialName("image")
-	val image: String?, // TODO
+	val image: EmbedImage?,
 
 	@SerialName("thumbnail")
-	val thumbnail: String?, // TODO
-
-	@SerialName("video")
-	val video: String?, // TODO
-
-	@SerialName("provider")
-	val provider: String?, // TODO
+	val thumbnail: EmbedThumbnail?,
 
 	@SerialName("author")
-	val author: String?, // TODO
+	val author: EmbedAuthor?,
 
 	@SerialName("fields")
 	val fields: List<EmbedField>,
-
-)
-
-@Serializable
-data class EmbedField (
-
-	@SerialName("name")
-	val name: String,
-
-	@SerialName("value")
-	val value: String,
-
-	@SerialName("inline")
-	val shouldInline: Boolean?
 
 )
