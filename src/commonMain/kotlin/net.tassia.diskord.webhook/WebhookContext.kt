@@ -11,30 +11,13 @@ import io.ktor.client.*
 data class WebhookContext (
 
 	/**
-	 * The ID of the webhook.
+	 * The base URL of this webhook. Contains the server, webhook ID and token.
 	 */
-	val webhookID: Long,
-
-	/**
-	 * The token/secret of the webhook.
-	 */
-	val webhookToken: String,
-
-	/**
-	 * The server to send requests to.
-	 */
-	val server: String,
+	val url: String,
 
 	/**
 	 * The [HttpClient] to use under the hood.
 	 */
 	val client: HttpClient
 
-) {
-
-	/**
-	 * The base URL of this webhook.
-	 */
-	val url = "$server/webhooks/$webhookID/$webhookToken"
-
-}
+)
