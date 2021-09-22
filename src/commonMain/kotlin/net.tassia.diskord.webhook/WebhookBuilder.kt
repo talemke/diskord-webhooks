@@ -24,7 +24,7 @@ inline fun Webhook(id: Long, token: String, block: WebhookBuilder.() -> Unit = {
 @Suppress("FunctionName")
 inline fun Webhook(url: String, block: WebhookBuilder.() -> Unit = {}): DiscordWebhook {
 	return Webhook {
-		this.url(url)
+		this.url = url
 		this.block()
 	}
 }
