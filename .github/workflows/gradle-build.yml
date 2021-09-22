@@ -11,11 +11,17 @@ jobs:
       matrix:
         platform:
 
-          - name: "Java Virtual Machine"
+          - name: "JVM"
             os: "ubuntu-latest"
             image: "gradle"
             compileTask: "compileKotlinJvm"
             testTask: "jvmTest"
+
+          - name: "JS"
+            os: "ubuntu-latest"
+            image: "gradle"
+            compileTask: "compileKotlinJS"
+            testTask: "jsTest"
 
     runs-on: ${{ matrix.platform.os }}
     container:
