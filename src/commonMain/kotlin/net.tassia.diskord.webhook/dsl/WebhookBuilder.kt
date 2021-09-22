@@ -13,7 +13,7 @@ class WebhookBuilder {
 	var url: String
 		get() = "$server/$id/$token"
 		set(value) {
-			val regex = Regex("([A-z0-9/.]+)/([0-9]+)/([A-z0-9_-]+)")
+			val regex = Regex("([A-z0-9/.:]+)/([0-9]+)/([A-z0-9_-]+)")
 			val match = regex.matchEntire(value) ?: throw IllegalArgumentException("Illegal webhook URL")
 
 			this.id = match.groupValues[2].toLong()
