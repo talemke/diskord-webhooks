@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'net.tassia'
-version = '0.0.1'
+version = '1.0.0-PRE.1'
 
 repositories {
 	mavenCentral()
@@ -56,7 +56,7 @@ kotlin {
 publishing {
 	repositories {
 		maven {
-			url = uri('https://nexus.tassia.net/repository/maven-tassia-kommons/')
+			url = uri('https://nexus.tassia.net/repository/maven-tassia/')
 			credentials {
 				username = findProperty("PUBLISH_MAVEN_USERNAME") ?: "N/A"
 				password = findProperty("PUBLISH_MAVEN_PASSWORD") ?: "N/A"
