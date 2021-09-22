@@ -1,0 +1,36 @@
+name: Build
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+
+          - name: "Java Virtual Machine"
+            os: "ubuntu-latest"
+            image: "gradle"
+            compileTask: "compileKotlinJvm"
+            testTask: "jvmTest"
+
+    runs-on: ${{ matrix.platform.os }}
+    container:
+      image: ${{ matrix.platform.image }}
+    name: ${{ matrix.platform.name }}
+    steps:
+
+      - name: Checkout Repository
+        uses: "actions/checkout@v2"
+
+      - name: Start Gradle Daemon
+        run: "gradle clean"
+
+      - name: Compile Project
+        run: "gradle ${{ matrix.platform.compileTask }}"
+
+      - name: Test Project
+        run: "gradle ${{ matrix.platform.testTask }}"
