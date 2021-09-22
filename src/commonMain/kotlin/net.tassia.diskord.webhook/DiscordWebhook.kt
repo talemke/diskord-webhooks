@@ -3,6 +3,7 @@ package net.tassia.diskord.webhook
 import io.ktor.client.features.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import io.ktor.http.*
 import net.tassia.diskord.webhook.dsl.MessageBuilder
 import net.tassia.diskord.webhook.dsl.MessageBuilderDSL
 
@@ -12,7 +13,8 @@ class DiscordWebhook(val context: WebhookContext) {
 	suspend inline fun execute(msg: Message, threadID: Long? = null) {
 		val url = if (threadID != null) "${context.url}?thread_id=$threadID" else context.url
 		context.client.post<HttpResponse>(url) {
-			body = msg
+			contentType(ContentType.Application.Json)
+			this.body = msg
 			this.expectSuccess = true
 		}
 	}
