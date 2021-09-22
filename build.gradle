@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'net.tassia'
-version = '1.0.0-PRE.2'
+version = '1.0.0-PRE.3'
 
 repositories {
 	mavenCentral()
