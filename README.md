@@ -31,54 +31,6 @@ webhook.execute("Hello World!")
 
 **Note:** `execute` is a suspending function.
 
-
-
-
-
-## Installation
-
-### Gradle Kotlin
-
-```kotlin
-repositories {
-    maven("https://nexus.tassia.net/repository/maven-public/")
-}
-
-dependencies {
-    implementation("net.tassia", "diskord-webhooks", "1.0.0")
-}
-```
-
-### Gradle Groovy
-
-```groovy
-repositories {
-    maven {
-        url = uri('https://nexus.tassia.net/repository/maven-public/')
-    }
-}
-
-dependencies {
-    implementation 'net.tassia:diskord-webhooks:1.0.0'
-}
-```
-
-### Maven
-
-```xml
-<repository>
-    <id>tassia-nexus</id>
-    <url>https://nexus.tassia.net/repository/maven-public/</url>
-</repository>
-```
-```xml
-<dependency>
-    <groupId>net.tassia</groupId>
-    <artifactId>diskord-webhooks</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
 ### Other
 
 [➥ View Artifact](https://nexus.tassia.net/#browse/browse:maven-public:net/tassia/diskord-webhooks/1.0.0)
