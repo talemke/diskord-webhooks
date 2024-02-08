@@ -1,9 +1,8 @@
 # Kotlin Discord Webhooks
 
-![](https://img.shields.io/github/license/TASSIA710/diskord-webhooks?label=License)
-![](https://img.shields.io/github/v/release/TASSIA710/diskord-webhooks?label=Stable)
-![](https://img.shields.io/github/v/release/TASSIA710/diskord-webhooks?label=Preview&include_prereleases)
-![](https://img.shields.io/github/workflow/status/TASSIA710/diskord-webhooks/Build/main?label=Build)
+![](https://img.shields.io/github/license/talemke/diskord-webhooks?label=License)
+![](https://img.shields.io/github/v/release/talemke/diskord-webhooks?label=Stable)
+![](https://img.shields.io/github/v/release/talemke/diskord-webhooks?label=Preview&include_prereleases)
 
 Multiplatform Kotlin library for sending Discord webhooks. Supports effectively all platforms
 which are supported by [Ktor](https://github.com/ktorio/ktor) and
